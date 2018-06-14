@@ -1,7 +1,6 @@
 <?php 
     $nome_usuario = trim($_POST["user"]);
     $senha = trim($_POST["password"]);
-    $email = trim($_POST["email"]);
 
     if(empty($nome_usuario)) {
         $erros = "Campo nome do usuário esta vazio.<br>";
@@ -9,10 +8,6 @@
 
     if(empty($senha)) {
         $erros = "Campo senha esta vazio.<br>";
-    }
-
-    if(empty($email)) {
-        $erros = "Campo email esta vazio.<br>";
     }
 
     if(!empty($erros)){
@@ -32,14 +27,22 @@
         die("Erro de conexão com o servidor mysql");
     }
 
-    /*
-    echo("Nome: ".$nome_usuario."<br>");
-    echo("Senha: ".$senha."<br>");
-    echo("Email: ".$email."<br>");
-    */
+    $sql = "select * from agenda.tbl_usuarios where nome_usuario = '$nome_usuario' and senha = '$senha' limit 1";
 
-    $sql = "insert into agenda.tbl_usuarios (nome_usuario, senha) values ('$nome_usuario', '$senha')";
-    //echo $sql;
     $result = mysqli_query($conexao, $sql);
-    header("Location: login.php");
-    //echo "<a href='login.php'>clique aqui para logar</a>";
+    $num_resgistros = mysqli_num_rows($result);
+
+    if($num_resgistros == 0){
+        echo "
+        <script>
+            alert('Usuario não encontrado');
+        </script>
+        ";
+        //header("Location: login.php");
+    }
+
+    echo "Dados corretos";
+    header("Location: dashboard.php");
+    
+    ?>
+
