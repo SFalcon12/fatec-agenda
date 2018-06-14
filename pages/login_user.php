@@ -38,11 +38,15 @@
             alert('Usuario não encontrado');
         </script>
         ";
+        echo '<meta http-equiv="refresh" content="3;URL=\'login.php\'">';
+        //sleep(3);
         //header("Location: login.php");
-    }
+    }else {
 
-    echo "Dados corretos";
-    header("Location: dashboard.php");
-    
+        echo "Dados corretos";
+        //sleep(3);
+        echo '<meta http-equiv="refresh" content="3;URL=\'dashboard.php\'">';
+        //header("Location: dashboard.php");
+    }
     ?>
 
