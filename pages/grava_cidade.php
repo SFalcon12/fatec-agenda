@@ -1,18 +1,13 @@
 <?php 
-    $nome_usuario = trim(utf8_decode($_POST["user"]));
-    $senha = trim(utf8_decode($_POST["password"]));
-    $email = trim(utf8_decode($_POST["email"]));
-    
-    if(empty($nome_usuario)) {
-        $erros = "Campo nome do usuário esta vazio.<br>";
+    $nome_cidade = utf8_decode($_POST["nome_cidade"]);
+    $estado  = $_POST["estado"];
+
+    if(empty($nome_cidade)) {
+        $erros = "Campo nome da cidade esta vazio.<br>";
     }
 
-    if(empty($senha)) {
-        $erros = "Campo senha esta vazio.<br>";
-    }
-
-    if(empty($email)) {
-        $erros = "Campo email esta vazio.<br>";
+    if(empty($estado)) {
+        $erros = "Campo estado esta vazio.<br>";
     }
 
     if(!empty($erros)){
@@ -38,8 +33,8 @@
     echo("Email: ".$email."<br>");
     */
 
-    $sql = "insert into agenda.tbl_usuarios (nome_usuario, senha) values ('$nome_usuario', '$senha')";
+    $sql = "insert into agenda.tbl_cidades (nome_cidade, estado) values ('$nome_cidade', '$estado')";
     //echo $sql;
     $result = mysqli_query($conexao, $sql);
-    header("Location: login.php");
+    header("Location: dashboard.php");
     //echo "<a href='login.php'>clique aqui para logar</a>";

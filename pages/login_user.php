@@ -1,4 +1,5 @@
-<?php 
+<?php
+    require_once('js.php');
     $nome_usuario = trim($_POST["user"]);
     $senha = trim($_POST["password"]);
 
@@ -35,7 +36,7 @@
     if($num_resgistros == 0){
         echo "
         <script>
-            alert('Usuario não encontrado');
+            showMessage('Login', 'Usuario não encontrado');
         </script>
         ";
         echo '<meta http-equiv="refresh" content="3;URL=\'login.php\'">';
@@ -45,8 +46,7 @@
 
         echo "Dados corretos";
         //sleep(3);
-        echo '<meta http-equiv="refresh" content="3;URL=\'dashboard.php\'">';
+        echo '<meta http-equiv="refresh" content="1;URL=\'dashboard.php\'">';
         //header("Location: dashboard.php");
     }
-    ?>
-
+?>
