@@ -1,4 +1,4 @@
-<?php 
+<?php
     $nome_cidade = utf8_decode($_POST["nome_cidade"]);
     $estado  = $_POST["estado"];
 
@@ -6,11 +6,7 @@
         $erros = "Campo nome da cidade esta vazio.<br>";
     }
 
-    if(empty($estado)) {
-        $erros = "Campo estado esta vazio.<br>";
-    }
-
-    if(!empty($erros)){
+    if(!empty($erros)) {
         echo "Foram encontradas inconsistencias de dados <br>";
         echo $erros;
         return;
