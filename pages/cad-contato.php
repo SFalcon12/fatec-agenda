@@ -22,7 +22,7 @@
             <form action="grava_contato.php" method="post" autocomplete="off">
 
                 <div class="input-group">
-                    <span class="input-group-addon" id="input-user-name">
+                    <span class="input-group-addon">
                         <span class="fas fa-globe"></span>
                     </span>
                     <input type="text" class="form-control" name="nome_contato" required placeholder="Nome do contato"
@@ -31,7 +31,7 @@
                 <br>
 
                 <div class="input-group">
-                    <span class="input-group-addon" id="input-user-name">
+                    <span class="input-group-addon">
                         <span class="fas fa-globe"></span>
                     </span>
                     <input type="text" class="form-control" name="endereco" required placeholder="Endereço do contato"
@@ -40,7 +40,7 @@
                 <br>
 
                 <div class="input-group">
-                    <span class="input-group-addon" id="input-user-name">
+                    <span class="input-group-addon">
                         <span class="fas fa-globe"></span>
                     </span>
                     <input type="number" class="form-control" name="n_endereco" required placeholder="Num. do Endereço"
@@ -49,7 +49,7 @@
                 <br>
 
                 <div class="input-group">
-                    <span class="input-group-addon" id="input-user-name">
+                    <span class="input-group-addon">
                         <span class="fas fa-globe"></span>
                     </span>
                     <input type="text" class="form-control" name="complemento" required placeholder="Complemento"
@@ -58,7 +58,7 @@
                 <br>
 
                 <div class="input-group">
-                    <span class="input-group-addon" id="input-user-name">
+                    <span class="input-group-addon">
                         <span class="fas fa-globe"></span>
                     </span>
                     <input type="text" class="form-control" name="bairro" required placeholder="Bairro"
@@ -67,10 +67,10 @@
                 <br>
 
                 <div class="input-group">
-                    <span class="input-group-addon" id="input-user-name">
+                    <span class="input-group-addon">
                         <span class="fas fa-globe"></span>
                     </span>
-                    <select name="cidade" class="form-control">
+                    <select name="cidade" class="form-control" required>
 
                         <?php
                                 $host = "localhost";
@@ -88,7 +88,9 @@
                                 $result = mysqli_query($conexao, $sql);
                                 if (mysqli_num_rows($result) > 0) {
                                     while($row = mysqli_fetch_assoc($result)) {
-                                        echo "<option value=".$row["id"].">".utf8_decode($row["nome_cidade"])."</option>";
+                                        //$test = utf8_encode($row["nome_cidade"]);
+                                        //echo "<script> console.log('$test'); </script>";
+                                        echo "<option value=".$row["id"].">".utf8_encode($row["nome_cidade"])."</option>";
                                     }
                                 }
 
@@ -100,10 +102,10 @@
                 <br>
 
                 <div class="input-group">
-                    <span class="input-group-addon" id="input-user-name">
+                    <span class="input-group-addon">
                         <span class="fas fa-globe"></span>
                     </span>
-                    <input type="number" class="form-control" name="cep" required placeholder="CEP"
+                    <input type="text" class="form-control" name="cep" required placeholder="CEP"
                         aria-describedly="input-cep">
                 </div>
                 <br>

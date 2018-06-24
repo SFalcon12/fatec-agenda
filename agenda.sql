@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Jun-2018 às 20:37
--- Versão do servidor: 10.1.33-MariaDB
+-- Generation Time: Jun 24, 2018 at 06:35 AM
+-- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -21,11 +21,13 @@ SET time_zone = "+00:00";
 --
 -- Database: `agenda`
 --
+CREATE DATABASE IF NOT EXISTS `agenda` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `agenda`;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbl_cidades`
+-- Table structure for table `tbl_cidades`
 --
 
 CREATE TABLE `tbl_cidades` (
@@ -37,13 +39,13 @@ CREATE TABLE `tbl_cidades` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbl_contatos`
+-- Table structure for table `tbl_contatos`
 --
 
 CREATE TABLE `tbl_contatos` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
-  `endereço` varchar(60) NOT NULL,
+  `endereco` varchar(60) NOT NULL,
   `nro_endereco` int(11) NOT NULL,
   `complemento` varchar(45) DEFAULT NULL,
   `bairro` varchar(30) NOT NULL,
@@ -54,7 +56,7 @@ CREATE TABLE `tbl_contatos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbl_telefones`
+-- Table structure for table `tbl_telefones`
 --
 
 CREATE TABLE `tbl_telefones` (
@@ -67,7 +69,7 @@ CREATE TABLE `tbl_telefones` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbl_usuarios`
+-- Table structure for table `tbl_usuarios`
 --
 
 CREATE TABLE `tbl_usuarios` (
@@ -139,13 +141,13 @@ ALTER TABLE `tbl_usuarios`
 --
 
 --
--- Limitadores para a tabela `tbl_contatos`
+-- Constraints for table `tbl_contatos`
 --
 ALTER TABLE `tbl_contatos`
   ADD CONSTRAINT `fk_tbl_contatos_tbl_cidades` FOREIGN KEY (`cidade_id`) REFERENCES `tbl_cidades` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `tbl_telefones`
+-- Constraints for table `tbl_telefones`
 --
 ALTER TABLE `tbl_telefones`
   ADD CONSTRAINT `fk_tbl_telefones_tbl_contatos1` FOREIGN KEY (`contato_id`) REFERENCES `tbl_contatos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
