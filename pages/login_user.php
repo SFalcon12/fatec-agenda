@@ -33,7 +33,7 @@
     $result = mysqli_query($conexao, $sql);
     $num_resgistros = mysqli_num_rows($result);
 
-    if($num_resgistros == 0){
+    if($num_resgistros == 0) {
         echo "
         <script>
             showMessage('Login', 'Usuario não encontrado');
@@ -44,9 +44,10 @@
         //header("Location: login.php");
     }else {
 
-        echo "Dados corretos";
-        //sleep(3);
-        echo '<meta http-equiv="refresh" content="1;URL=\'dashboard.php\'">';
-        //header("Location: dashboard.php");
+        session_start();
+        $_SESSION["title"] = "Sucesso";
+        $_SESSION["msg"] = "Usuario logado";
+        //echo '<meta http-equiv="refresh" content="1;URL=\'dashboard.php\'">';
+        header("Location: dashboard.php");
     }
 ?>

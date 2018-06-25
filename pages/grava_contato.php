@@ -42,5 +42,9 @@
     if(!$result){
         echo mysqli_error($conexao);
     }
+    header("Location: cad-contato.php");
+
+    session_start();
+    $_SESSION["title"] = "Sucesso";
+    $_SESSION["msg"] = "Contato registrado";
     header("Location: dashboard.php");
-    //echo "<a href='login.php'>clique aqui para logar</a>";

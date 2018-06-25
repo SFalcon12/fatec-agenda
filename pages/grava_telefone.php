@@ -1,10 +1,12 @@
 <?php
-    $nome_cidade = utf8_decode($_POST["nome_cidade"]);
-    $estado  = $_POST["estado"];
+    $contato_id = $_POST["contato_id"];
+    $tipo_telefone = utf8_decode($_POST["tipo_telefone"]);
+    $num_telefone  = $_POST["num_telefone"];
 
+    /*
     if(empty($nome_cidade)) {
         $erros = "Campo nome da cidade esta vazio.<br>";
-    }
+    }*/
 
     if(!empty($erros)) {
         echo "Foram encontradas inconsistencias de dados <br>";
@@ -23,18 +25,11 @@
         die("Erro de conexão com o servidor mysql");
     }
 
-    /*
-    echo("Nome: ".$nome_usuario."<br>");
-    echo("Senha: ".$senha."<br>");
-    echo("Email: ".$email."<br>");
-    */
-
-    $sql = "insert into agenda.tbl_cidades (nome_cidade, estado) values ('$nome_cidade', '$estado')";
+    $sql = "insert into agenda.tbl_telefones (contato_id, tipo_telefone, nro_telefone) values ('$contato_id', '$tipo_telefone', '$num_telefone')";
     //echo $sql;
     $result = mysqli_query($conexao, $sql);
 
     session_start();
     $_SESSION["title"] = "Sucesso";
-    $_SESSION["msg"] = "Cidade registrada";
+    $_SESSION["msg"] = "Telefone registrado";
     header("Location: dashboard.php");
-    //echo "<a href='login.php'>clique aqui para logar</a>";

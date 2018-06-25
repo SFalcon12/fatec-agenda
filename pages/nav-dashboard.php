@@ -20,6 +20,8 @@
                     <li><a href="cad-cidade.php">Cidades</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="cad-contato.php">Contatos</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="cad-telefone.php">Telefone</a></li>
                 </ul>
             </li>
         </ul>

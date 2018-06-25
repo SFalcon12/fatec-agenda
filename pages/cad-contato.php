@@ -4,7 +4,8 @@
     <?php include_once("header.php"); ?>
 </head>
 <body class="back-page-register">
-    <?php include_once("nav-dashboard.php"); ?>
+    <?php include_once("nav-dashboard.php"); 
+        ob_start();?>
 
     <div class="register-box">
         <div class="register-box-body">
@@ -88,10 +89,13 @@
                                 $result = mysqli_query($conexao, $sql);
                                 if (mysqli_num_rows($result) > 0) {
                                     while($row = mysqli_fetch_assoc($result)) {
-                                        //$test = utf8_encode($row["nome_cidade"]);
-                                        //echo "<script> console.log('$test'); </script>";
                                         echo "<option value=".$row["id"].">".utf8_encode($row["nome_cidade"])."</option>";
                                     }
+                                } else {
+                                    session_start();
+                                    $_SESSION["title"] = "Erro";
+                                    $_SESSION["msg"] = "Não ha cidades cadastrados";
+                                    header("Location: dashboard.php");
                                 }
 
                                 mysqli_close($conexao);
