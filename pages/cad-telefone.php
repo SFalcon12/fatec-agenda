@@ -48,7 +48,7 @@
                                 }else {
                                     session_start();
                                     $_SESSION["title"] = "Erro";
-                                    $_SESSION["msg"] = "Não ha contatos cadastrados";
+                                    $_SESSION["msg"] = "Não há contatos cadastrados";
                                     header("Location: dashboard.php");
                                 }
 

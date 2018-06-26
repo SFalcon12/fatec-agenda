@@ -8,7 +8,7 @@
     <div class="pull-right hidden-xs">
       <div style="text-align: right;">
         <strong>Curso de Análise e Desenvolvimento de Sistemas &nbsp;&nbsp;&nbsp;</strong><br>
-        <strong>Desenvolvido por: Israel &nbsp;&nbsp;&nbsp;</strong>
+        <strong>Desenvolvido por: Israel Vieira Peixoto</strong> e <strong> Jessé Vieira Pixoto Filho &nbsp;&nbsp;&nbsp;</strong>
       </div>
 
     </div>

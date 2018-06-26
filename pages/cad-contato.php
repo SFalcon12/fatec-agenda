@@ -94,7 +94,7 @@
                                 } else {
                                     session_start();
                                     $_SESSION["title"] = "Erro";
-                                    $_SESSION["msg"] = "Não ha cidades cadastrados";
+                                    $_SESSION["msg"] = "Não há cidades cadastrados";
                                     header("Location: dashboard.php");
                                 }
 
