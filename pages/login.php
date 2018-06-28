@@ -21,11 +21,11 @@
             <!-- formulario de login -->
             <form action="login_user.php" method="post" autocomplete="off">
                 <div class="input-group">
-                    <span class="input-group-addon" id="input-user-name">
-                        <span class="fas fa-user"></span>
+                    <span class="input-group-addon" id="input-email">
+                        <span class="fas fa-email"></span>
                     </span>
-                    <input type="text" autocomplete="off" class="form-control" name="user" required placeholder="Nome do usuário"
-                        aria-describedly="input-user">
+                    <input type="email" autocomplete="off" class="form-control" name="email" required placeholder="Email"
+                        aria-describedly="input-email">
                 </div>
                 <br>
 

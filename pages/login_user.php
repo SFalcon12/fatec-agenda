@@ -1,9 +1,9 @@
 <?php
     require_once('js.php');
-    $nome_usuario = trim($_POST["user"]);
+    $email = trim($_POST["email"]);
     $senha = trim($_POST["password"]);
 
-    if(empty($nome_usuario)) {
+    if(empty($email)) {
         $erros = "Campo nome do usuário esta vazio.<br>";
     }
 
@@ -28,11 +28,12 @@
         die("Erro de conexão com o servidor mysql");
     }
 
-    $sql = "select * from agenda.tbl_usuarios where nome_usuario = '$nome_usuario' and senha = '$senha' limit 1";
+    $sql = "select * from agenda.tbl_usuarios where email = '$email' and senha = '$senha' limit 1";
 
     $result = mysqli_query($conexao, $sql);
     $num_resgistros = mysqli_num_rows($result);
 
+    mysqli_close($conexao);
     if($num_resgistros == 0) {
         echo "
         <script>
@@ -45,9 +46,11 @@
     }else {
 
         session_start();
+        $_SESSION['user_email'] = $email;
         $_SESSION["title"] = "Sucesso";
         $_SESSION["msg"] = "Usuario logado";
         //echo '<meta http-equiv="refresh" content="1;URL=\'dashboard.php\'">';
         header("Location: dashboard.php");
     }
+
 ?>

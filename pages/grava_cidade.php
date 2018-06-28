@@ -33,8 +33,10 @@
     //echo $sql;
     $result = mysqli_query($conexao, $sql);
 
-    session_start();
-    $_SESSION["title"] = "Sucesso";
-    $_SESSION["msg"] = "Cidade registrada";
-    header("Location: dashboard.php");
-    //echo "<a href='login.php'>clique aqui para logar</a>";
+    if($result) {
+        session_start();
+        $_SESSION["title"] = "Sucesso";
+        $_SESSION["msg"] = "Cidade registrada";
+        header("Location: dashboard.php");
+        //echo "<a href='login.php'>clique aqui para logar</a>";
+    }

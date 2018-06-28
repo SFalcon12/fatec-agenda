@@ -38,7 +38,7 @@
     echo("Email: ".$email."<br>");
     */
 
-    $sql = "insert into agenda.tbl_usuarios (nome_usuario, senha) values ('$nome_usuario', '$senha')";
+    $sql = "insert into agenda.tbl_usuarios (nome_usuario, senha, email) values ('$nome_usuario', '$senha', '$email')";
     //echo $sql;
     $result = mysqli_query($conexao, $sql);
     header("Location: login.php");
