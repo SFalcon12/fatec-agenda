@@ -117,7 +117,7 @@ ALTER TABLE `tbl_usuarios`
 -- AUTO_INCREMENT for table `tbl_cidades`
 --
 ALTER TABLE `tbl_cidades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_contatos`
 --
@@ -132,7 +132,7 @@ ALTER TABLE `tbl_telefones`
 -- AUTO_INCREMENT for table `tbl_usuarios`
 --
 ALTER TABLE `tbl_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --

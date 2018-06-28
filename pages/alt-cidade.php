@@ -45,13 +45,13 @@
 
             <!-- formulario de cadastro de cidade -->
             <form action="altera_cidade.php" method="post" autocomplete="off">
-                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="input-group">
                     <span class="input-group-addon" id="input-user-name">
                         <span class="fas fa-globe"></span>
                     </span>
                     <input type="text" class="form-control" name="nome_cidade" required placeholder="Nome da cidade"
-                        aria-describedly="input-nome-cidade" value=<?php echo $row["nome_cidade"]; ?>>
+                        aria-describedly="input-nome-cidade" value=<?php echo utf8_encode($row["nome_cidade"]); ?>>
                 </div>
                 <br>
 

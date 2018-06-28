@@ -4,6 +4,6 @@
 ?>
 <html>
     <head>
-        <meta http-equiv="refresh" content="0;URL=http://localhost:8088/agenda/index.php">
+        <meta http-equiv="refresh" content="0;URL=http://localhost/agenda/index.php">
     </head>
 </html>
