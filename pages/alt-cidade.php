@@ -44,7 +44,8 @@
             ?>
 
             <!-- formulario de cadastro de cidade -->
-            <form action="grava_cidade.php" method="post" autocomplete="off">
+            <form action="altera_cidade.php" method="post" autocomplete="off">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="input-group">
                     <span class="input-group-addon" id="input-user-name">
                         <span class="fas fa-globe"></span>

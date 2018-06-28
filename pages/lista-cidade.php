@@ -39,12 +39,13 @@
                             $result = mysqli_query($conexao, $sql);
                             if (mysqli_num_rows($result) > 0) {
                                 while($row = mysqli_fetch_assoc($result)) {
+                                    $id = $row["id"];
                                     echo "<tr>
                                             <td>".$row["id"]."</td>
                                             <td>".utf8_encode($row["nome_cidade"])."</td>
                                             <td>".$row["estado"]."</td>
-                                            <td><a href='alt-cidade.php?id='".$row["id"]."'><button class='btn btn-primary btn-xs'><i class='fa fa-pencil-alt'></i></button></a> 
-                                            &nbsp;&nbsp;<a href='del-cidade.php?id='".$row["id"]."'><button class='btn btn-danger btn-xs'><i class='fa fa-trash-alt'></i></button></a></td>
+                                            <td><a href='alt-cidade.php?id=$id'><button class='btn btn-primary btn-xs'><i class='fa fa-pencil-alt'></i></button></a> 
+                                            &nbsp;&nbsp;<a href='del-cidade.php?id=$id'><button class='btn btn-danger btn-xs'><i class='fa fa-trash-alt'></i></button></a></td>
                                           </tr>";
                                 }
                             }else {
