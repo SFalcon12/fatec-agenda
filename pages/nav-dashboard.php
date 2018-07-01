@@ -24,7 +24,12 @@
                         </ul>
                     </li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="cad-contato.php">Contatos</a></li>
+                    <li><a href="#">Contatos</a>
+                        <ul>
+                            <li><a href="cad-contato.php">Incluir</a></li>
+                            <li><a href="lista-contato.php">Listagem</a></li>
+                        </ul>
+                    </li>
                     <!--
                     <li><a href="cad-cidade.php">Cidades</a></li>
                     <li role="separator" class="divider"></li>

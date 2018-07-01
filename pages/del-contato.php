@@ -22,13 +22,13 @@
         die("Erro de conexão com o servidor mysql");
     }
 
-    $sql = "delete from agenda.tbl_cidades where id = '$id'";
+    $sql = "delete from agenda.tbl_contatos where id = '$id'";
     //echo $sql;
     $result = mysqli_query($conexao, $sql);
 
     if($result) {
         session_start();
         $_SESSION["title"] = "Sucesso";
-        $_SESSION["msg"] = "Cidade deletada";
+        $_SESSION["msg"] = "Contato deletado";
         header("Location: dashboard.php");
     }
