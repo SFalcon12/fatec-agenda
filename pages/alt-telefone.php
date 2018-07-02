@@ -10,7 +10,7 @@
         <div class="register-box-body">
             <div class="row" style="text-align: center;">
                 <span class="register-title">
-                    Registrar Telefone:
+                    Alterar Telefone:
                 </span>
             </div>
             <hr class="hr-separator">

@@ -10,7 +10,7 @@
         <div class="register-box-body">
             <div class="row" style="text-align: center;">
                 <span class="register-title">
-                    Sistema de Agenda:
+                    Alterar Cidade:
                 </span>
             </div>
             <hr class="hr-separator">
