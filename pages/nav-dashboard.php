@@ -30,6 +30,7 @@
                             <li><a href="lista-contato.php">Listagem</a></li>
                         </ul>
                     </li>
+                    <li role="separator" class="divider"></li>
                     <li><a href="#">Telefones</a>
                         <ul>
                             <li><a href="cad-telefone.php">Incluir</a></li>
